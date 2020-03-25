@@ -1,0 +1,1 @@
+You are given a fair coin. On average, how many flips would you need to get two of the same flip in a row (either 2 heads in a row or 2 tails in a row)?
