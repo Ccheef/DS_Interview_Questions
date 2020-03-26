@@ -9,3 +9,7 @@
 
 **You have two jars, 50 red marbles, 50 blue marbles. You need to place all marbles into the jars so that when you blindly pick a marble out of one jar, you maximize the chances of selecting a red marble. How would you distribute the marbles into two jars?**
 * Place only one red marble into jar 1, and place the remaining marbles into jar 2. So, p = 1/2 * 1 + 1/2 * 49/99 = 0.7475
+
+**If the probability of seeing a car on the highway in 30 minutes is 0.95, what is the probability of seeing a car on highway in 10 minutes?(Assume a constant default probability)**
+* "constant default probability" means "the probability of observing a car in any given non-overlapping time interval of equal length are equal and independent". Let's assume the probability of seeing no car in 10 minutes is P. So, observing at least one car in 30 minutes is 1-P^3 = 0.95. That is, P = 0.37 and observing at least one car in 10 minutes is 1-P=0.67
+* Or, cars arriving in a highway can be modeled by a Poisson process. For details, please refer to the [post](https://www.quora.com/If-the-probability-of-observing-a-car-in-30-minutes-on-a-highway-is-0-95-what-is-the-probability-of-observing-a-car-in-10-minutes-assuming-constant-default-probability)
