@@ -38,3 +38,11 @@ JOIN Managers ON
 Employees.ManagedBy = Managers.Id
 WHERE Managers.Name = “Sandy Kim”
 ```
+
+**6.**
+![Q6_Question](Q6_Question.png)
+* The query:
+```
+SELECT Name FROM Employees
+WHERE ManagedBy Is Null
+```
