@@ -12,3 +12,11 @@ FROM Payments
 WHERE TrialYear <= 2015;
 ```
 * TrialYear will be assigned at the end, so we cannot use the alias as the filter. Instead, we should use "WHERE YEAR(TrialDate) <= 2015"
+
+**3. What is wrong with this query?**
+```
+SELECT Id, TrialDate 
+FROM Payments
+GROUP BY Id;
+```
+* There needs to be an aggregate function on TrialDate, otherwise we should include the TrialDate in the GROUP BY statement
