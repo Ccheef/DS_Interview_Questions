@@ -28,3 +28,13 @@ FROM Invoices
 HAVING COUNT(OrderId) >= 1
 ```
 * We use the AVG and Having functions, so we need to use a GROUP BY statement to accompany these statements
+
+**5.**
+![Q5_Question](Q5_Question.png)
+* The query:
+```
+SELECT Employees.Name FROM Employees
+JOIN Managers ON 
+Employees.ManagedBy = Managers.Id
+WHERE Managers.Name = “Sandy Kim”
+```
