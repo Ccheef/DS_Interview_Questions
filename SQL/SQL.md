@@ -20,3 +20,11 @@ FROM Payments
 GROUP BY Id;
 ```
 * There needs to be an aggregate function on TrialDate, otherwise we should include the TrialDate in the GROUP BY statement
+
+**4. What is wrong with this query?**
+```
+SELECT UserId, AVG(Total) AS AvgOrderTotal
+FROM Invoices
+HAVING COUNT(OrderId) >= 1
+```
+* We use the AVG and Having functions, so we need to use a GROUP BY statement to accompany these statements
