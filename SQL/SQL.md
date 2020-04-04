@@ -46,3 +46,20 @@ WHERE Managers.Name = “Sandy Kim”
 SELECT Name FROM Employees
 WHERE ManagedBy Is Null
 ```
+
+**7.**
+![Q7_Question](Q7_Question.png)
+* The query:
+```
+SELECT
+  name,
+  job_role
+FROM 
+  employees
+WHERE    
+  #since a can be *anywhere* in the name, we % on either side
+  #since we are looking for job roles that *end* in 'er', 
+  #we put our % on the left-hand side
+  (name LIKE %a% OR job_role LIKE %er')
+;
+```
