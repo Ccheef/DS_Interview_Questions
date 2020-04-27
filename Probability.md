@@ -13,3 +13,6 @@
 **5.If the probability of seeing a car on the highway in 30 minutes is 0.95, what is the probability of seeing a car on highway in 10 minutes?(Assume a constant default probability)**
 * "constant default probability" means "the probability of observing a car in any given non-overlapping time interval of equal length are equal and independent". Let's assume the probability of seeing no car in 10 minutes is P. So, observing at least one car in 30 minutes is 1-P^3 = 0.95. That is, P = 0.37 and observing at least one car in 10 minutes is 1-P=0.67
 * Or, cars arriving in a highway can be modeled by a Poisson process. For details, please refer to the [post](https://www.quora.com/If-the-probability-of-observing-a-car-in-30-minutes-on-a-highway-is-0-95-what-is-the-probability-of-observing-a-car-in-10-minutes-assuming-constant-default-probability)
+
+**6.Suppose you're analyzing a population of 100,000 people, and you're trying to understand life expectancy. Within this population of 100,000 people, 65% can expect to live to the age of 70, while 25% can expect to live to age 80. Given that a person is already 70, what is the probability that they live to the age 80?**
+* P(person lives to 80 | person is 70) = P(person is 70 and 80) / P(person is 70) = 0.25 / 0.65 = 0.38
