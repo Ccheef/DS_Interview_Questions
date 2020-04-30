@@ -63,3 +63,8 @@ WHERE
   (name LIKE %a% OR job_role LIKE %er')
 ;
 ```
+
+**8. Suppose you're working for Reddit as an analyst. Reddit is trying to optimize its server allocation per subreddit, and you've been tasked with figuring out how much comment activity happens once a post is published.
+Use your intuition to select a timeframe to query the data as well as how you would want to present this information to the partnering team. The solution will be a SQL query with assumptions that you would need to state if this was asked in an interview. You have the following tables:.**
+![table_1](Q8_table1.png) 
+![table_2](Q8_table2.png)
