@@ -66,5 +66,41 @@ WHERE
 
 **8. Suppose you're working for Reddit as an analyst. Reddit is trying to optimize its server allocation per subreddit, and you've been tasked with figuring out how much comment activity happens once a post is published.
 Use your intuition to select a timeframe to query the data as well as how you would want to present this information to the partnering team. The solution will be a SQL query with assumptions that you would need to state if this was asked in an interview. You have the following tables:.**
+
 ![table_1](Q8_table1.png) 
 ![table_2](Q8_table2.png)
+
+* Since our goal is to optimize server allocation per subreddit, I'm going to sum comment activity per subreddit by date as the final table to present. Then we need to decide is what period we want to analyze. I'm going to say that a post needs to be active for at least 2 hours, and we're going to look at the last 30 days of posts. Next we need to join the posts table with the comments table. I only want comments made by the same day as the post as I aim to allocate the server resources to subreddits by daily level. (These all my assumptions, we can easily change the query if the stakeholders want different metrics )
+```
+SELECT
+ #get the number of comments for each subreddit by day
+ subreddit_id,
+ date,
+ SUM(num_comments_in_1_day) as num_comments_per_day
+FROM(
+ SELECT
+     #group by subreddit, post_id, and day in the month
+     subreddit_id,
+     post_id,
+     DATE_TRUNC(DATE(posts.time), day) as date,
+     COUNT(distinct comments_id) as num_comments_in_1_day
+ FROM(
+     SELECT DISTINCT
+         posts.subreddit_id,
+         posts.id as post_id,
+         posts.time,
+         comments.id as comments_id
+     FROM posts as posts
+         # we're doing a left join so we don't exclude posts that don't have comments
+         LEFT JOIN comments as comments
+             # We only want the comments that made by the same day as the post
+             ON posts.id = comments.post_id
+             AND DATE_TRUNC(DATE(posts.time), day) = DATE_TRUNC(DATE(comments.time), day)
+     # For the time period, we only want to analyze the past 30 days activity 
+     WHERE posts.time <= TIME_NOW() - 60*60*2
+         AND posts.time >= TIME_NOW() - 60*60*24*30
+     )
+ GROUP BY 1, 2, 3
+ )
+GROUP BY 1, 2
+```
