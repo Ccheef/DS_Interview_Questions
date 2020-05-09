@@ -21,3 +21,15 @@
 If a given individual needs to make a trip that's 3,000 miles, what is the probability that she/he will be able to complete the trip without having to replace the battery? You can assume the car battery is new for this problem.
 For some reading material on exponential distributions, you can visit this [link](https://www.probabilitycourse.com/chapter4/4_2_2_exponential.php)**
 * 1/λ = 10000 => λ = 1/10000, P(X>x) = e<sup>-(λx)</sup>, P(X>3000) = e<sup>-(3000/10000)</sup> = 0.7408
+
+**8. What is the expected number of coin flips for getting two consecutive heads?**
+
+* Since consecutive flips are independent events, the solution in this case can be recursively framed in terms of x. Let the expected number of coin flips be x. The case analysis goes as follows
+  * If the first flip is a tail, then we have wasted one flip. The probability of this event is 1/2 and the total number       of flips required is x+1
+  * If the first flip is a head and second flip is a tail, then we have wasted two flips. The probability of this event is     1/4 and the total number of flips required is x+2
+  * If the first flip is a heads and second flip is also heads, then we are done. The probability of this event is 1/4 and     the total number of flips required is 2.
+  
+ * Adding, the equation that we get is -
+ x = (1/2)(x+1) + (1/4)(x+2) + (1/4)2
+ Solving, we get x = 6.
+ * For general case please refer to the this [website](https://www.codechef.com/wiki/tutorial-expectation) Q3
