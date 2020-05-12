@@ -33,3 +33,7 @@ For some reading material on exponential distributions, you can visit this [link
  x = (1/2)(x+1) + (1/4)(x+2) + (1/4)2
  Solving, we get x = 6.
  * For general case please refer to the this [website](https://www.codechef.com/wiki/tutorial-expectation) Q3
+
+**9. You are given 10 coins. 9 are fair and 1 is biased. You are told the biased coin has P>0.5 to be heads. You randomly grab a coin and flip it three times and get HHT. What is the probability you flipped the biased coin?**
+* Suppose the biased coin has probability p to get head. Then, 
+P(B|HHT) = P(HHT|B) * P(B) / (P(HHT|B) * P(B) + P(HHT|F) * P(F)) = p * p * (1-p) * 0.1 / (p * p * (1-p) * 0.1 + 0.5^3 * 0.9)
