@@ -15,4 +15,6 @@ A type II error may be compared with a so-called false negative (where an actual
 **4. A new medical test for a virus has been created. 1% of the population has the virus. 99% of sick people with the virus test positive (indicating they have the virus). 99% of healthy individuals test negative for the virus. If a patient tested positive, what is the probability that they have the virus?**
 * P(sick|positive) = P(positive|sick) * P(sick) / (P(positive|sick) * P(sick) + P(positive|healthy) * P(heathy)) = 0.99 * 0.01 / (0.99 * 0.01 + 0.01 * 0.99) = 0.5
 
-
+**5. The average life of a certain type of motor is 10 years, with a standard deviation of 2 years. If the manufacturer is willing to replace only 3% of the motors because of failures, how long a guarantee should she offer? Assume that the lives of the motors follow a normal distribution.**
+* We only want to the left tail of the normal distribution to have p value 0.03, which equals z value -1.88
+* 10 - 2 * 1.88 = 6.24
