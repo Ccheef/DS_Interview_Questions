@@ -4,3 +4,12 @@
 **2. A new quantum message system has 0.8 probability of 0.8 of success in any attempt to send a message through. Calculate the of having 7 successes in 10 attempt?**
 * Binomial distribution. <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;P(X=7)&space;=&space;\binom{10}{7}&space;*&space;0.8^7&space;*&space;0.2^3&space;=&space;0.20133" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;P(X=7)&space;=&space;\binom{10}{7}&space;*&space;0.8^7&space;*&space;0.2^3&space;=&space;0.20133" title="P(X=7) = \binom{10}{7} * 0.8^7 * 0.2^3 = 0.20133" /></a>
 
+**3. What is the difference between Type I vs Type II error?**
+* A type I error occurs when the null hypothesis (H0) is true, but is rejected. It is asserting something that is absent, a false hit. 
+A type I error may be likened to a so-called false positive (a result that indicates that a given condition is present when it actually is not present)
+* A type II error occurs when the null hypothesis is false, but erroneously fails to be rejected. It is failing to assert what is present, a miss. 
+A type II error may be compared with a so-called false negative (where an actual 'hit' was disregarded by the test and seen as a 'miss') in a test checking for a single condition with a definitive result of true or false.
+
+![summary](Q3_Solution.png)
+
+
