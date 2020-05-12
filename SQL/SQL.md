@@ -104,3 +104,24 @@ FROM(
  )
 GROUP BY 1, 2
 ```
+**9. Suppose we have the table as first picture below and we display 3 or more consecutive rows 
+where people were >=100 like second picture below. Write a SQL query to achieve this task.**
+
+![table_1](Q9_table1.png)
+![table_1](Q9_table2.png) 
+
+* We first group the consecutive rows that are >= 100. Then we count the number of consecutive rows. 
+Finally, we select the the count number that is larger than 3 (excluding the first row for every group since it is <100)
+* This problem tests window function. Please see the SQL fiddle [here](https://www.db-fiddle.com/f/iXh7iyFNjQmMgWWvgPRdit/0)
+```
+SELECT s4.*
+from
+(SELECT s3.*, row_number() over (partition by s3.num_greater_100 order by date_) as consecutive_rank
+from
+(select s2.*, count(s2.Date_) over (partition by s2.GRP) as num_greater_100
+from
+(select s1.*,sum(case when people < 100 then 1 else 0 end) over (order by date_) as grp
+from stadium s1) s2
+order by s2.DATE_) s3) s4
+where s4.num_greater_100 > 3 and s4.consecutive_rank > 1
+```
