@@ -12,4 +12,7 @@ A type II error may be compared with a so-called false negative (where an actual
 
 ![summary](Q3_Solution.png)
 
+**4. A new medical test for a virus has been created. 1% of the population has the virus. 99% of sick people with the virus test positive (indicating they have the virus). 99% of healthy individuals test negative for the virus. If a patient tested positive, what is the probability that they have the virus?**
+* P(sick|positive) = P(positive|sick) * P(sick) / (P(positive|sick) * P(sick) + P(positive|healthy) * P(heathy)) = 0.99 * 0.01 / (0.99 * 0.01 + 0.01 * 0.99) = 0.5
+
 
