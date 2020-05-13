@@ -16,3 +16,5 @@ Also remember, having high number of messages sent not necessary a good thing as
 * We know that more searches are being conducted, since advertisements are served along with every new search, there are more opportunities for users to click on the advertisement. 
 * Another possibility is that the search algorithm is different than the algorithm used to display ads. In this case, the ads themselves may be more relevant than the search results, causing more ad clicks.
 
+**4. Same setup as question 2. Since the less relevant algorithm resulted in higher advertising revenue, should it be implemented anyways?**
+* This is a bit of an opinion question, but we should probably not implement this new algorithm.The effects described are probably only short-term effects due to the problems with the algorithm.We shouldn’t sacrifice the long term potential of the site for a temporary increase in revenue and searches.Google is probably best positioned to win in the long term when it has the most relevant search algorithm. 
