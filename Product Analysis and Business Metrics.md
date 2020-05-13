@@ -18,3 +18,11 @@ Also remember, having high number of messages sent not necessary a good thing as
 
 **4. Same setup as question 2. Since the less relevant algorithm resulted in higher advertising revenue, should it be implemented anyways?**
 * This is a bit of an opinion question, but we should probably not implement this new algorithm.The effects described are probably only short-term effects due to the problems with the algorithm.We shouldn’t sacrifice the long term potential of the site for a temporary increase in revenue and searches.Google is probably best positioned to win in the long term when it has the most relevant search algorithm. 
+
+**5. A car company produces all the cars for a country, we’ll call them Car X and Car Y. 50% of the population drives Car X, the other 50% drives Car Y. Two potential technologies have just been discovered that help reduce gasoline usage. Technology A can increase the MPG of Car X from 50 MPG to 75 MPG, while Technology B can increase the MPG of Car Y from 10 MPG to 11 MPG. Which technology should be implemented to save the most gasoline for the country?**
+* Let us assume that the average commute distance for a car in both population is D, then this question has a clear correct answer. 
+* Total Gas Used Change with Policy A: (D/50)-(D/75) = D / 150
+* Total Gas Used Change with Policy B: (D/10)-(D/11) = D / 110
+* D/150 < D/110, so we should implement Technology B
+* This is a bot counter intuitive since people at first sight may think 50 to 75 is much more than 10 to 11.
+
