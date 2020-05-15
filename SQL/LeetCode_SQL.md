@@ -28,3 +28,9 @@ BEGIN
   );
 END
 ```
+#178
+```
+#use dense_rank to rank score in consecutive order
+SELECT s.Score, DENSE_RANK() over (ORDER BY s.Score DESC) as 'Rank'
+FROM Scores s
+```
