@@ -11,3 +11,20 @@ SELECT MAX(salary) AS secondhighestsalary
 FROM employee
 WHERE salary < (SELECT MAX(salary) FROM employee);
 ```
+
+#177
+```
+#USE dense_rank to rank the duplicated salary as the same rank and distinct to only select one duplicated salary
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  RETURN (
+      Select DISTINCT sub1.Salary
+      FROM
+          (SELECT e.Salary, DENSE_RANK() over (order by e.Salary DESC) as 'Rank'
+           FROM Employee e
+           ) sub1
+      WHERE sub1.rank = N
+      
+  );
+END
+```
