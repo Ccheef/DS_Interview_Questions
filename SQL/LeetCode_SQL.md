@@ -34,3 +34,20 @@ END
 SELECT s.Score, DENSE_RANK() over (ORDER BY s.Score DESC) as 'Rank'
 FROM Scores s
 ```
+
+#180
+```
+#Use lag and lead as window functions
+SELECT DISTINCT sub1.Num AS 'ConsecutiveNums'
+FROM
+(SELECT l.Num, LAG(l.Num, 1) OVER (ORDER BY l.Id) AS 'Lag_Num', LEAD(l.Num, 1) OVER (ORDER BY l.Id) AS 'Lead_Num'
+FROM Logs l) sub1
+WHERE sub1.Num = sub1.Lag_Num AND sub1.Num = sub1.Lead_Num
+
+#Use joins
+SELECT DISTINCT l1.Num AS 'ConsecutiveNums'
+FROM Logs l1
+JOIN Logs l2 on l1.Id = l2.Id+1
+JOIN Logs l3 on l1.Id = l3.Id+2 
+WHERE l1.Num= l2.Num AND l2.Num= l3.Num
+```
