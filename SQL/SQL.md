@@ -125,3 +125,18 @@ from stadium s1) s2
 order by s2.DATE_) s3) s4
 where s4.num_greater_100 > 3 and s4.consecutive_rank > 1
 ```
+
+**10.**
+![Question](Q10_Question.png)
+* We first merge two tables by stream_id and then filter for the date. Finally, we aggregate mins_viewed to rank the creators
+```
+SELECT 
+    c.creator_id,
+    SUM(v.mins_viewed) AS total_mins
+FROM creatorStreams c
+JOIN viewWatches v
+ON c.stream_id = v.stream_id
+WHERE c.date = v.date
+GROUP BY c.creator_id
+ORDER BY total_mins DESC
+```
