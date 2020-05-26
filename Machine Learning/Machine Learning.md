@@ -4,3 +4,8 @@
 
 **2. Describe the formula for logistic regression and how the algorithm is used for binary classification.**
 * <img src="Q2_Formula.png" width="200" height="50" /> We can use the result of f(x) as the probability of a data point being labeled as positive case. There is a cutoff value to choose to label the data points. For detailed mathematical derivation, please refer the [post](http://www.win-vector.com/blog/2011/09/the-simpler-derivation-of-logistic-regression/)
+
+**3. How does a Decision Tree decide on its splits (what is the criteria for a split point)?**
+* Find the feature that best splits the target class into the purest possible children nodes. There are splitting measures such as Information Gain, Gini Index, etc. 
+* For details, please refer these links:https://github.com/YC-Coder-Chen/Tree-Math, https://medium.com/@rishabhjain_22692/decision-trees-it-begins-here-93ff54ef134, 
+https://blog.quantinsti.com/gini-index/
