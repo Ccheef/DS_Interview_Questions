@@ -9,3 +9,11 @@
 * Find the feature that best splits the target class into the purest possible children nodes. There are splitting measures such as Information Gain, Gini Index, etc. 
 * For details, please refer these links:https://github.com/YC-Coder-Chen/Tree-Math, https://medium.com/@rishabhjain_22692/decision-trees-it-begins-here-93ff54ef134, 
 https://blog.quantinsti.com/gini-index/
+
+**4. What advantages does a decision tree model have?**
+* Very easy to interpret and understand
+* Works on both continuous and categorical features
+* No normalization or scaling necessary (not sensitive to outliers)
+* Prediction algorithm runs very fast
+* Helpful links: https://www.brighthubpm.com/project-planning/106000-advantages-of-decision-tree-analysis/, https://en.wikipedia.org/wiki/Decision_tree_learning
+
