@@ -73,3 +73,24 @@ SELECT c.Name as Customers
 FROM Customers c LEFT JOIN Orders o ON c.Id = o.CustomerId
 WHERE o.Id IS NULL
 ```
+
+#184
+```#Two solutions I wrote
+
+SELECT t2.Department, e1.Name as Employee, e1.Salary
+FROM Employee e1 JOIN 
+    #subtable with department and corresponding highest salary to join back 
+    (SELECT t1.Id, t1.Department, Max(t1.Salary) as Max_salary
+     FROM
+        (SELECT e.Salary, d.Id, d.Name as Department
+         FROM Employee e JOIN Department d ON e.DepartmentId = d.Id) t1
+    GROUP BY t1.Id ) t2
+ON e1.DepartmentId = t2.Id and e1.Salary = t2.Max_salary
+
+SELECT t1.Department, t1.Employee, t1.Salary #use dense rank to get duplicated max salary
+FROM
+    (SELECT d.Name AS Department, e.Name AS Employee,  e.Salary, 
+     DENSE_RANK() OVER (Partition BY d.Id ORDER BY e.Salary DESC) AS salary_rank
+    FROM Employee e JOIN Department d ON e.DepartmentId = d.Id) t1
+WHERE t1.salary_rank = 1
+```
