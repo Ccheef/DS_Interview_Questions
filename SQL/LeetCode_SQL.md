@@ -58,3 +58,11 @@ SELECT a.Name as Employee
 FROM Employee a JOIN Employee b ON a.ManagerId = b.Id
 WHERE a.Salary > b.Salary
 ```
+
+#182
+```
+SELECT DISTINCT Email 
+FROM Person
+GROUP BY Email
+HAVING COUNT(Email) > 1
+```
