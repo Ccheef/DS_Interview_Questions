@@ -51,3 +51,10 @@ JOIN Logs l2 on l1.Id = l2.Id+1
 JOIN Logs l3 on l1.Id = l3.Id+2 
 WHERE l1.Num= l2.Num AND l2.Num= l3.Num
 ```
+
+#181
+```
+SELECT a.Name as Employee
+FROM Employee a JOIN Employee b ON a.ManagerId = b.Id
+WHERE a.Salary > b.Salary
+```
