@@ -75,7 +75,8 @@ WHERE o.Id IS NULL
 ```
 
 #184
-```#Two solutions I wrote
+```
+#Two solutions I wrote
 
 SELECT t2.Department, e1.Name as Employee, e1.Salary
 FROM Employee e1 JOIN 
