@@ -95,3 +95,14 @@ FROM
     FROM Employee e JOIN Department d ON e.DepartmentId = d.Id) t1
 WHERE t1.salary_rank = 1
 ```
+
+#196
+```
+DELETE FROM Person
+WHERE Id NOT IN
+(SELECT Id from 
+ (SELECT MIN(Id) AS Id
+FROM Person 
+GROUP BY Email) p
+)
+```
