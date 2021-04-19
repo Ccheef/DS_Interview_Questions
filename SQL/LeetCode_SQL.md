@@ -99,9 +99,9 @@ WHERE t1.salary_rank = 1
 #196
 ```
 DELETE FROM Person
-WHERE Id NOT IN
-(SELECT Id from 
- (SELECT MIN(Id) AS Id
+WHERE (Id, Email) NOT IN
+(SELECT Id, Email from 
+ (SELECT MIN(Id) AS Id, Email
 FROM Person 
 GROUP BY Email) p
 )
