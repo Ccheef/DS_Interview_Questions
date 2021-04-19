@@ -106,3 +106,15 @@ FROM Person
 GROUP BY Email) p
 )
 ```
+
+#197
+```
+SELECT w_prev.Id
+FROM
+(
+(SELECT *, ADDDATE(recordDate, INTERVAL -1 DAY) AS prevRecordDate
+FROM Weather) w_prev
+LEFT JOIN Weather on w_prev.prevRecordDate = Weather.recordDate
+) 
+WHERE w_prev.Temperature > Weather.Temperature
+```
